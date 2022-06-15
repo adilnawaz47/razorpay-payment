@@ -5,7 +5,8 @@ from django.urls import path
 from payment import views
 
 urlpatterns = [
-	path('', views.homepage, name='index'),
-	path('paymenthandler/', views.paymenthandler, name='paymenthandler'),
+	path("", views.home, name="home"),
+    path("payment/", views.order_payment, name="payment"),
+    path("callback/", views.callback, name="callback"),
 	path('admin/', admin.site.urls),
 ]
