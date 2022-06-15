@@ -56,15 +56,21 @@
 	</style>
 </head>
 <body>
-	<div class="card">
-	<h1 class="title">Buy Me a Chai </h1>
-	<small class="muted"
-		>If you like my work, you can support me by donating ₹200</small
-	>
-	<div class="btn_container">
-		<!-- Payment Button -->
-		<button class="btn" id="pay-btn">Donate</button>
-	</div>
+	<div class="col-6 mx-auto" style="margin-top:10%;">
+		<form action="{% url 'payment' %}" method='POST'>
+			{% csrf_token %}
+			<div class="mb-3">
+			  <label for="exampleInputEmail1" class="form-label">Name</label>
+			  <input type="name" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			</div>
+			<div class="mb-3">
+			  <label for="exampleInputPassword1" class="form-label">Amount</label>
+			  <input type="number" name="amount" class="form-control" id="exampleInputPassword1">
+			</div>
+			<div>
+			<button type="submit" class="btn btn-primary">Pay Now</button>
+			</div>
+		  </form>
 	</div>
 </body>
 
